@@ -1,0 +1,423 @@
+{% extends "website/base.html" %}
+{% load static %}
+
+{% block content %}
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow" style="color:var(--gold-light);">Hyderabad · Since 2011</div>
+      <h1>Financial clarity and <em>compliance confidence</em> for growing businesses.</h1>
+      <p class="lead">VGV Konsultancy delivers taxation, accounting, auditing, and regulatory compliance services built on 15+ years of hands-on professional experience — practical, timely, and precise.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn-primary">Book a Consultation</a>
+        <a href="#services" class="btn-ghost">Explore Services</a>
+      </div>
+    </div>
+    <div class="hero-panel reveal">
+      <div class="stat-row">
+        <span class="stat-num">15+</span>
+        <span class="stat-label">Years of direct &amp; indirect taxation, audit and compliance experience</span>
+      </div>
+      <div class="stat-row">
+        <span class="stat-num">8</span>
+        <span class="stat-label">Core service lines — from GST to internal audit</span>
+      </div>
+      <div class="stat-row">
+        <span class="stat-num">11</span>
+        <span class="stat-label">Industries served, from startups to shipping &amp; logistics</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="capabilities">
+  <div class="wrap">
+    <div class="cap-head reveal">
+      <div>
+        <div class="eyebrow">Core Capabilities</div>
+        <h2>What we handle, day to day.</h2>
+      </div>
+      <div class="cap-controls">
+        <button class="car-btn" id="capPrev" aria-label="Scroll left">&#8249;</button>
+        <button class="car-btn" id="capNext" aria-label="Scroll right">&#8250;</button>
+      </div>
+    </div>
+
+    <div class="carousel reveal" id="capCarousel">
+      <div class="car-card">
+        <div class="car-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2h9l3 3v17H6z"/><path d="M15 2v3h3"/><path d="M9 12h6M9 15.5h6M9 8.5h3"/></svg></div>
+        <div class="car-title">Direct &amp; Indirect Taxation</div>
+        <div class="car-desc">Return filing, assessments, and advisory across Income Tax and GST.</div>
+      </div>
+      <div class="car-card">
+        <div class="car-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="7" cy="7" r="2.4"/><circle cx="17" cy="17" r="2.4"/><path d="M18 6 6 18"/></svg></div>
+        <div class="car-title">GST Compliance</div>
+        <div class="car-desc">Registration, periodic returns, advisory, and litigation support.</div>
+      </div>
+      <div class="car-card">
+        <div class="car-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h13"/><path d="M13 4l4 4-4 4"/><path d="M20 16H7"/><path d="M11 12l-4 4 4 4"/></svg></div>
+        <div class="car-title">Transfer Pricing</div>
+        <div class="car-desc">Documentation and compliance for cross-entity transactions.</div>
+      </div>
+      <div class="car-card">
+        <div class="car-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18"/><path d="M5 7l-3 6a3.2 3.2 0 0 0 6 0z"/><path d="M19 7l-3 6a3.2 3.2 0 0 0 6 0z"/><path d="M5 7h14"/><path d="M9 21h6"/></svg></div>
+        <div class="car-title">Income Tax Case Handling</div>
+        <div class="car-desc">Representation and resolution support for assessments and notices.</div>
+      </div>
+      <div class="car-card">
+        <div class="car-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V9l8-5 8 5v12"/><path d="M9 21v-6h6v6"/><path d="M9 12h.01M12 12h.01M15 12h.01M9 9h.01M12 9h.01M15 9h.01"/></svg></div>
+        <div class="car-title">ROC &amp; MCA Compliance</div>
+        <div class="car-desc">Annual filings, incorporation, and director-level obligations.</div>
+      </div>
+      <div class="car-card">
+        <div class="car-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M20 20l-4.8-4.8"/></svg></div>
+        <div class="car-title">Internal Audit &amp; Risk</div>
+        <div class="car-desc">Control evaluation, compliance audits, and risk assessment.</div>
+      </div>
+      <div class="car-card">
+        <div class="car-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="13" rx="1"/><path d="M3 10h18"/><circle cx="8" cy="14.5" r="1.2" fill="currentColor" stroke="none"/><path d="M8 6V4h8v2"/></svg></div>
+        <div class="car-title">Payroll &amp; Statutory Compliance</div>
+        <div class="car-desc">Processing, PF/ESI, salary structuring, and labour law compliance.</div>
+      </div>
+      <div class="car-card">
+        <div class="car-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></div>
+        <div class="car-title">Financial Reporting</div>
+        <div class="car-desc">Statements, MIS, budgeting, forecasting, and cash flow visibility.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="wrap about-grid">
+    <div class="reveal">
+      <div class="eyebrow">About the Firm</div>
+      <h2>Building business confidence through financial excellence.</h2>
+    </div>
+    <div class="about-copy reveal">
+      <p>Founded after <strong>15 years of extensive professional experience</strong>, VGV Konsultancy was established to provide dependable, high-quality financial, taxation, and compliance services to businesses across industries.</p>
+      <p>Our expertise spans <strong>direct and indirect taxation, GST compliance, Income Tax matters, accounting, bookkeeping, payroll management, ROC compliance, internal auditing, financial reporting</strong>, and statutory compliance. We help businesses simplify regulatory obligations, strengthen financial controls, and make informed decisions.</p>
+      <p class="pull-line">"We believe in building long-term client relationships through integrity, professionalism, and personalized service."</p>
+      <p>Alongside VGV Konsultancy, our founder also serves as an <strong>Internal Auditor at Glonebile Shipping India Pvt. Ltd.</strong>, bringing practical experience in corporate governance, internal controls, risk management, and operational efficiency.</p>
+    </div>
+  </div>
+</section>
+
+<section class="founder" id="founder">
+  <div class="wrap">
+    <div class="founder-top">
+      <div class="founder-card reveal">
+        <div class="founder-photo">
+          <img src="{% static 'website/img/dasarathi_director.jpeg' %}" alt="Dasaradhi Dhulipala, Founder &amp; Managing Consultant, VGV Konsultancy">
+        </div>
+        <div class="founder-body">
+        <h3>Dasaradhi Dhulipala</h3>
+        <div class="role">Founder &amp; Managing Consultant<br>Taxation · GST · Income Tax · Accounting · Corporate Compliance</div>
+        <p>A finance and taxation professional with experience across direct and indirect taxation, transfer pricing, accounting, payroll management, ROC compliance, internal auditing, and statutory compliance.</p>
+        <p>Hands-on experience handling GST and Income Tax matters, transfer pricing compliance, and financial reporting — delivering practical financial and regulatory solutions to businesses. Based in Hyderabad, Telangana.</p>
+        <div class="founder-tags">
+          <span>Direct Taxation</span>
+          <span>Indirect Taxation</span>
+          <span>Transfer Pricing</span>
+          <span>Risk Assessment</span>
+          <span>Financial Reporting</span>
+        </div>
+        </div>
+      </div>
+
+      <div class="reveal">
+        <div class="eyebrow">Career Path</div>
+        <h2 style="font-size:26px;margin-bottom:32px;">Two decades in finance, before founding VGV.</h2>
+        <div class="timeline">
+          <div class="t-item current">
+            <div class="t-period">Jan 2011 — Present · 15 yrs 7 mos</div>
+            <div class="t-role">Founder, Tax, Accounting &amp; Compliance Consultant</div>
+            <div class="t-org">VGV Konsultants · Self-employed</div>
+            <div class="t-loc">Hyderabad, Telangana, India</div>
+          </div>
+          <div class="t-item">
+            <div class="t-period">Dec 2005 — Dec 2009 · 4 yrs 1 mo</div>
+            <div class="t-role">Assistant Tax Manager</div>
+            <div class="t-org">3i Infotech Ltd. · Full-time</div>
+            <div class="t-loc">Mumbai, Maharashtra, India</div>
+          </div>
+          <div class="t-item">
+            <div class="t-period">Mar 2004 — Nov 2005 · 1 yr 9 mos</div>
+            <div class="t-role">Account Manager</div>
+            <div class="t-org">Surya Engineering Plastics · Full-time</div>
+            <div class="t-loc">Pune District, Maharashtra, India</div>
+          </div>
+          <div class="t-item">
+            <div class="t-period">Jan 2001 — Feb 2004 · 3 yrs 2 mos</div>
+            <div class="t-role">Deputy Manager, Accounts</div>
+            <div class="t-org">NCL Buildtek Limited · Full-time</div>
+            <div class="t-loc">India</div>
+          </div>
+          <div class="t-item">
+            <div class="t-period">Nov 1998 — Mar 2001 · 2 yrs 5 mos</div>
+            <div class="t-role">Senior Accountant</div>
+            <div class="t-org">Apollo Hospitals Group · On-site</div>
+            <div class="t-loc">Hyderabad, Telangana, India</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="office rule-top" id="office">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Our Office</div>
+      <h2>Where the work gets done.</h2>
+      <p>A working practice office in Hyderabad — desks, records, and files, set up for day-to-day client service.</p>
+    </div>
+    <div class="office-grid reveal">
+      <figure>
+        <img src="{% static 'website/img/office1.jpeg' %}" alt="VGV Konsultancy office — consultant's desk with reference library">
+        <figcaption>Consultant's Desk</figcaption>
+      </figure>
+      <figure>
+        <img src="{% static 'website/img/office2.jpeg' %}" alt="VGV Konsultancy office — workstation and filing area">
+        <figcaption>Client Workstation</figcaption>
+      </figure>
+      <figure>
+        <img src="{% static 'website/img/office3.jpeg' %}" alt="VGV Konsultancy office — records and filing room">
+        <figcaption>Records &amp; Filing</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Our Services</div>
+      <h2>End-to-end financial &amp; regulatory support.</h2>
+      <p>Eight core service lines, drawn from real practice — not a generic checklist. Each is built around the compliance calendar Indian businesses actually run on.</p>
+    </div>
+    <div class="service-grid">
+      <div class="service-card reveal">
+        <div class="service-index">01 / Taxation</div>
+        <h4>Taxation Services</h4>
+        <ul>
+          <li>Income Tax Return Filing</li>
+          <li>Assessments &amp; Case Handling</li>
+          <li>Tax Planning &amp; Advisory</li>
+          <li>GST Registration &amp; Filing</li>
+          <li>GST Advisory &amp; Litigation Support</li>
+        </ul>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-index">02 / Accounting</div>
+        <h4>Accounting &amp; Bookkeeping</h4>
+        <ul>
+          <li>End-to-End Accounting</li>
+          <li>Bookkeeping Services</li>
+          <li>Financial Statement Prep</li>
+          <li>Bank Reconciliation</li>
+          <li>Accounts Finalization &amp; MIS</li>
+        </ul>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-index">03 / Corporate</div>
+        <h4>Corporate Compliance</h4>
+        <ul>
+          <li>ROC Annual Filings</li>
+          <li>MCA &amp; Companies Act Compliance</li>
+          <li>Company Incorporation Support</li>
+          <li>Director Compliance</li>
+        </ul>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-index">04 / Payroll</div>
+        <h4>Payroll &amp; Statutory Compliance</h4>
+        <ul>
+          <li>Payroll Processing</li>
+          <li>PF, ESI &amp; Professional Tax</li>
+          <li>Salary Structuring</li>
+          <li>TDS on Salaries</li>
+          <li>Labour Law Compliance</li>
+        </ul>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-index">05 / Audit</div>
+        <h4>Internal Audit &amp; Risk</h4>
+        <ul>
+          <li>Internal Audit</li>
+          <li>Internal Control Evaluation</li>
+          <li>Compliance Audits</li>
+          <li>Risk Assessment</li>
+          <li>Process Improvement &amp; SOP Review</li>
+        </ul>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-index">06 / Reporting</div>
+        <h4>Financial Reporting &amp; Advisory</h4>
+        <ul>
+          <li>Financial Reporting</li>
+          <li>Budgeting &amp; Forecasting</li>
+          <li>Business Financial Analysis</li>
+          <li>Cash Flow Management</li>
+        </ul>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-index">07 / Regulatory</div>
+        <h4>Statutory &amp; Regulatory Compliance</h4>
+        <ul>
+          <li>Compliance Management</li>
+          <li>Regulatory Advisory</li>
+          <li>Documentation &amp; Filing Support</li>
+          <li>Statutory Compliance Monitoring</li>
+        </ul>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-index">08 / Advisory</div>
+        <h4>Transfer Pricing &amp; Advisory</h4>
+        <ul>
+          <li>Transfer Pricing Compliance</li>
+          <li>Tax Advisory &amp; Support</li>
+          <li>Management Reporting</li>
+          <li>Practical Regulatory Solutions</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="insights" id="insights">
+  <div class="wrap">
+    <div class="cap-head reveal">
+      <div>
+        <div class="eyebrow">Firm Insights</div>
+        <h2>Latest updates &amp; articles.</h2>
+      </div>
+      <a href="{% url 'website:post_list' %}" class="btn-ghost" style="color:var(--navy);border-color:var(--line);">View All Insights</a>
+    </div>
+
+    {% if latest_posts %}
+    <div class="insight-grid reveal">
+      {% for post in latest_posts %}
+      <a href="{{ post.get_absolute_url }}" class="insight-card">
+        <div class="insight-thumb">
+          {% if post.cover_image %}
+            <img src="{{ post.cover_image.url }}" alt="{{ post.title }}">
+          {% else %}
+            <div class="insight-thumb-placeholder">{{ post.get_category_display }}</div>
+          {% endif %}
+        </div>
+        <div class="insight-body">
+          <div class="insight-cat">{{ post.get_category_display }} &middot; {{ post.published_at|date:"d M Y" }}</div>
+          <h4>{{ post.title }}</h4>
+          <p>{{ post.excerpt }}</p>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+    {% else %}
+    <p class="reveal" style="color:var(--ink-soft);">No posts published yet — add one from the Django admin.</p>
+    {% endif %}
+  </div>
+</section>
+
+<section class="why">
+  <div class="wrap why-grid">
+    <div class="section-head reveal" style="margin-bottom:0;">
+      <div class="eyebrow" style="color:var(--gold-light);">Why VGV</div>
+      <h2>Chosen for precision, kept for partnership.</h2>
+      <p>Clients stay because compliance is handled before it becomes a problem — not after.</p>
+    </div>
+    <div class="why-list reveal">
+      <div class="why-item">
+        <span class="why-num">01</span>
+        <h5>15+ Years of Experience</h5>
+        <p>Two decades across corporate finance and independent consulting.</p>
+      </div>
+      <div class="why-item">
+        <span class="why-num">02</span>
+        <h5>Personalized Solutions</h5>
+        <p>Financial and compliance plans matched to how your business actually runs.</p>
+      </div>
+      <div class="why-item">
+        <span class="why-num">03</span>
+        <h5>GST &amp; Income Tax Depth</h5>
+        <p>Hands-on expertise in filings, assessments, and litigation support.</p>
+      </div>
+      <div class="why-item">
+        <span class="why-num">04</span>
+        <h5>Corporate Compliance Knowledge</h5>
+        <p>ROC, MCA, and Companies Act obligations managed end to end.</p>
+      </div>
+      <div class="why-item">
+        <span class="why-num">05</span>
+        <h5>Internal Audit Experience</h5>
+        <p>Practical risk assessment drawn from an active internal auditor role.</p>
+      </div>
+      <div class="why-item">
+        <span class="why-num">06</span>
+        <h5>Timely &amp; Confidential</h5>
+        <p>Accurate work, delivered to deadline, held in strict confidence.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="industries" id="industries">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Industries We Serve</div>
+      <h2>Sector-aware, not sector-limited.</h2>
+    </div>
+    <div class="chip-cloud reveal">
+      <div class="chip">Manufacturing</div>
+      <div class="chip">Logistics &amp; Shipping</div>
+      <div class="chip">Trading</div>
+      <div class="chip">Information Technology</div>
+      <div class="chip">Healthcare</div>
+      <div class="chip">Construction</div>
+      <div class="chip">E-commerce</div>
+      <div class="chip">Startups &amp; MSMEs</div>
+      <div class="chip">Private Limited Companies</div>
+      <div class="chip">LLPs &amp; Partnership Firms</div>
+      <div class="chip">Service-Based Businesses</div>
+    </div>
+  </div>
+</section>
+
+<section class="mv">
+  <div class="wrap">
+    <div class="mv-grid reveal">
+      <div class="mv-card">
+        <div class="eyebrow">Our Mission</div>
+        <p>To provide reliable, ethical, and value-driven financial, taxation, and compliance services that enable businesses to grow confidently while maintaining the highest standards of regulatory compliance.</p>
+      </div>
+      <div class="mv-card">
+        <div class="eyebrow">Our Vision</div>
+        <p>To be recognized as a trusted consulting firm delivering excellence in taxation, accounting, auditing, and corporate compliance through integrity, professionalism, and long-term client partnerships.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta" id="contact">
+  <div class="wrap cta-inner">
+    <div class="reveal">
+      <div class="eyebrow" style="color:var(--gold-light);">Get in Touch</div>
+      <h2>Let's simplify your compliance calendar.</h2>
+      <p>Trusted expertise, practical solutions, sustainable growth — reach out for a consultation on taxation, accounting, or compliance matters.</p>
+      <div class="hero-actions">
+        <a href="#" class="btn-primary">Request a Call Back</a>
+      </div>
+    </div>
+    <div class="cta-box reveal">
+      <div class="cta-row"><span>Firm</span><span>VGV Konsultancy</span></div>
+      <div class="cta-row"><span>Founder</span><span>Dasaradhi Dhulipala</span></div>
+      <div class="cta-row"><span>Location</span><span>Hyderabad, Telangana, India</span></div>
+      <div class="cta-row"><span>Focus</span><span>Tax · Accounting · Compliance</span></div>
+      <div class="cta-row"><span>Since</span><span>2011 · 15+ Years</span></div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

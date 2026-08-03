@@ -1,0 +1,62 @@
+{% extends "website/base.html" %}
+
+{% block title %}Insights — VGV Konsultancy{% endblock %}
+
+{% block content %}
+<section class="hero" style="padding-bottom:64px;">
+  <div class="wrap">
+    <div class="hero-inner reveal" style="border-bottom:none;padding-bottom:0;">
+      <div class="eyebrow" style="color:var(--gold-light);">Firm Insights</div>
+      <h1 style="font-size:clamp(28px,3.6vw,42px);">Articles &amp; updates from VGV Konsultancy.</h1>
+      <p class="lead">Practical notes on taxation, GST, compliance, and running a financially sound business.</p>
+    </div>
+  </div>
+</section>
+
+<section class="services">
+  <div class="wrap">
+    <div class="chip-cloud reveal" style="margin-bottom:44px;">
+      <a href="{% url 'website:post_list' %}" class="chip" style="{% if not active_category %}border-color:var(--blue);color:var(--blue);{% endif %}">All</a>
+      {% for value, label in categories %}
+        <a href="?category={{ value }}" class="chip" style="{% if active_category == value %}border-color:var(--blue);color:var(--blue);{% endif %}">{{ label }}</a>
+      {% endfor %}
+    </div>
+
+    {% if page_obj %}
+    <div class="insight-grid reveal">
+      {% for post in page_obj %}
+      <a href="{{ post.get_absolute_url }}" class="insight-card">
+        <div class="insight-thumb">
+          {% if post.cover_image %}
+            <img src="{{ post.cover_image.url }}" alt="{{ post.title }}">
+          {% else %}
+            <div class="insight-thumb-placeholder">{{ post.get_category_display }}</div>
+          {% endif %}
+        </div>
+        <div class="insight-body">
+          <div class="insight-cat">{{ post.get_category_display }} &middot; {{ post.published_at|date:"d M Y" }}</div>
+          <h4>{{ post.title }}</h4>
+          <p>{{ post.excerpt }}</p>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+
+    {% if page_obj.has_other_pages %}
+    <div class="pagination">
+      {% if page_obj.has_previous %}
+        <a href="?page={{ page_obj.previous_page_number }}{% if active_category %}&category={{ active_category }}{% endif %}" class="car-btn">&#8249;</a>
+      {% endif %}
+      <span class="page-current">Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</span>
+      {% if page_obj.has_next %}
+        <a href="?page={{ page_obj.next_page_number }}{% if active_category %}&category={{ active_category }}{% endif %}" class="car-btn">&#8250;</a>
+      {% endif %}
+    </div>
+    {% endif %}
+
+    {% else %}
+    <p class="reveal" style="color:var(--ink-soft);">No posts published yet — add one from the Django admin.</p>
+    {% endif %}
+  </div>
+</section>
+{% endblock %}

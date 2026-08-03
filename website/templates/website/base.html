@@ -1,0 +1,81 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{% block title %}VGV Konsultancy — Finance, Taxation &amp; Compliance{% endblock %}</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,500&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'website/css/style.css' %}">
+{% block extra_head %}{% endblock %}
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <a href="{% url 'website:home' %}" class="brand">
+      <div class="brand-mark">V</div>
+      <div class="brand-text">VGV Konsultancy<span>Finance · Tax · Compliance</span></div>
+    </a>
+    <nav class="links">
+      <a href="{% url 'website:home' %}#about">About</a>
+      <a href="{% url 'website:home' %}#founder">Founder</a>
+      <a href="{% url 'website:home' %}#office">Office</a>
+      <a href="{% url 'website:home' %}#services">Services</a>
+      <a href="{% url 'website:post_list' %}">Insights</a>
+      <a href="{% url 'website:home' %}#contact">Contact</a>
+    </nav>
+    <a href="{% url 'website:home' %}#contact" class="nav-cta">Book a Consultation</a>
+  </div>
+</header>
+
+{% block content %}{% endblock %}
+
+<footer>
+  <div class="wrap foot-row">
+    <span>&copy; {% now "Y" %} VGV Konsultancy. All rights reserved.</span>
+    <span>Trusted Expertise · Practical Solutions · Sustainable Growth</span>
+  </div>
+</footer>
+
+<script>
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {threshold:0.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  const carousel = document.getElementById('capCarousel');
+  const prevBtn = document.getElementById('capPrev');
+  const nextBtn = document.getElementById('capNext');
+  if(carousel && prevBtn && nextBtn){
+    const scrollAmt = () => carousel.querySelector('.car-card').offsetWidth + 18;
+    prevBtn.addEventListener('click', ()=> carousel.scrollBy({left:-scrollAmt()*2, behavior:'smooth'}));
+    nextBtn.addEventListener('click', ()=> carousel.scrollBy({left:scrollAmt()*2, behavior:'smooth'}));
+
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let autoTimer;
+    const advance = () => {
+      const maxScroll = carousel.scrollWidth - carousel.clientWidth;
+      if(carousel.scrollLeft >= maxScroll - 4){
+        carousel.scrollTo({left:0, behavior:'smooth'});
+      } else {
+        carousel.scrollBy({left:scrollAmt(), behavior:'smooth'});
+      }
+    };
+    const startAuto = () => { if(!reduceMotion) autoTimer = setInterval(advance, 2800); };
+    const stopAuto = () => clearInterval(autoTimer);
+    startAuto();
+    carousel.addEventListener('mouseenter', stopAuto);
+    carousel.addEventListener('mouseleave', startAuto);
+    carousel.addEventListener('touchstart', stopAuto, {passive:true});
+    carousel.addEventListener('touchend', startAuto, {passive:true});
+    prevBtn.addEventListener('click', ()=>{ stopAuto(); startAuto(); });
+    nextBtn.addEventListener('click', ()=>{ stopAuto(); startAuto(); });
+  }
+</script>
+{% block extra_scripts %}{% endblock %}
+
+</body>
+</html>

@@ -1,0 +1,60 @@
+{% extends "website/base.html" %}
+
+{% block title %}{{ post.title }} — VGV Konsultancy{% endblock %}
+
+{% block content %}
+<section class="hero" style="padding-bottom:64px;">
+  <div class="wrap">
+    <div class="hero-inner reveal" style="border-bottom:none;padding-bottom:0;max-width:760px;">
+      <div class="eyebrow" style="color:var(--gold-light);">{{ post.get_category_display }}</div>
+      <h1 style="font-size:clamp(28px,3.6vw,42px);">{{ post.title }}</h1>
+      <p class="lead">By {{ post.author }} &middot; {{ post.published_at|date:"d M Y" }}</p>
+    </div>
+  </div>
+</section>
+
+<section class="about">
+  <div class="wrap" style="max-width:760px;">
+    {% if post.cover_image %}
+      <img src="{{ post.cover_image.url }}" alt="{{ post.title }}" style="width:100%;border-radius:16px;margin-bottom:36px;">
+    {% endif %}
+    <div class="about-copy reveal">
+      {% for para in post.paragraphs %}
+        <p>{{ para }}</p>
+      {% endfor %}
+    </div>
+    <div style="margin-top:40px;">
+      <a href="{% url 'website:post_list' %}" class="btn-ghost" style="color:var(--navy);border-color:var(--line);">&#8249; Back to Insights</a>
+    </div>
+  </div>
+</section>
+
+{% if related_posts %}
+<section class="services rule-top">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">More in {{ post.get_category_display }}</div>
+      <h2>Related insights.</h2>
+    </div>
+    <div class="insight-grid reveal">
+      {% for rp in related_posts %}
+      <a href="{{ rp.get_absolute_url }}" class="insight-card">
+        <div class="insight-thumb">
+          {% if rp.cover_image %}
+            <img src="{{ rp.cover_image.url }}" alt="{{ rp.title }}">
+          {% else %}
+            <div class="insight-thumb-placeholder">{{ rp.get_category_display }}</div>
+          {% endif %}
+        </div>
+        <div class="insight-body">
+          <div class="insight-cat">{{ rp.get_category_display }} &middot; {{ rp.published_at|date:"d M Y" }}</div>
+          <h4>{{ rp.title }}</h4>
+          <p>{{ rp.excerpt }}</p>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+{% endblock %}
